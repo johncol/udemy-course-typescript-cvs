@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/johncol/udemy-typescript-cvs#readme",
   "devDependencies": {
+    "@types/node": "^12.12.6",
     "concurrently": "^5.0.0",
     "nodemon": "^1.19.4"
   }
