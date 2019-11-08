@@ -1,0 +1,26 @@
+{
+  "name": "udemy-typescript-cvs",
+  "version": "1.0.0",
+  "description": "Sample node application written in typescript to read and process data from a CVS file",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon ./build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johncol/udemy-typescript-cvs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johncol/udemy-typescript-cvs/issues"
+  },
+  "homepage": "https://github.com/johncol/udemy-typescript-cvs#readme",
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "nodemon": "^1.19.4"
+  }
+}
