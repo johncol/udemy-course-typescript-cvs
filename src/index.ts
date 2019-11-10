@@ -1,9 +1,7 @@
-import fs from 'fs';
+import { CsvReader } from './CsvReader';
 
-const matches: string[][] = fs
-  .readFileSync('./football.csv', { encoding: 'utf-8' })
-  .split('\n')
-  .map((row: string) => row.split(','));
+const reader: CsvReader = new CsvReader('./football.csv');
+const matches: string[][] = reader.read();
 
 let manUnitedWins: number = 0;
 
