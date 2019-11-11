@@ -1,3 +1,3 @@
 export { MatchResult } from './MatchResult';
-export { MatchRow } from './MatchRow';
+export { MatchRow, MatchRowField } from './MatchRow';
 export { MatchRowsReader } from './MatchRowsReader';
