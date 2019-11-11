@@ -8,9 +8,14 @@ const reader: CsvReader = new CsvReader('./football.csv');
 const matchesReader: MatchRowsReader = new MatchRowsReader(reader);
 const matches: MatchRow[] = matchesReader.read();
 
-const manUnitedWins: Report = new Report(
-  new WinsAnalyzer('Man United'),
-  new ConsolePrinter()
-);
+const consolePrinter: ConsolePrinter = new ConsolePrinter();
 
-manUnitedWins.run(matches);
+const reports: Report[] = [
+  new Report(new WinsAnalyzer('Man United'), consolePrinter),
+  new Report(new WinsAnalyzer('Chelsea'), consolePrinter),
+  new Report(new WinsAnalyzer('Liverpool'), consolePrinter),
+  new Report(new WinsAnalyzer('Man City'), consolePrinter),
+  new Report(new WinsAnalyzer('Arsenal'), consolePrinter)
+];
+
+reports.forEach(report => report.run(matches));
