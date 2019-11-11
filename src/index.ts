@@ -1,13 +1,9 @@
-import { CsvReader } from './CsvReader';
-import { MatchResult } from './MatchResult';
-import { MatchRowsMapper } from './MatchRowsReader';
-import { MatchRow } from './MatchRow';
+import { CsvReader } from './csv/CsvReader';
+import { MatchResult, MatchRowsReader, MatchRow } from './match';
 
 const reader: CsvReader = new CsvReader('./football.csv');
-const data: string[][] = reader.read();
-
-const mapper: MatchRowsMapper = new MatchRowsMapper();
-const matches: MatchRow[] = mapper.map(data);
+const matchesReader: MatchRowsReader = new MatchRowsReader(reader);
+const matches: MatchRow[] = matchesReader.read();
 
 let manUnitedWins: number = 0;
 
