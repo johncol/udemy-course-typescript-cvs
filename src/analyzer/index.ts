@@ -1,1 +1,2 @@
-export { WinsAnalyzer } from './WinsAnalyzer';
+export * from './WinsAnalyzer';
+export * from './SeasonWinsAnalyzer';

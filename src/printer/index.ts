@@ -1,1 +1,1 @@
-export { ConsolePrinter } from './ConsolePrinter';
+export * from './ConsolePrinter';
