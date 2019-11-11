@@ -1,4 +1,5 @@
-import { MatchRow } from '../match';
+import { MatchRow } from './../match';
+import { SeasonWinsAnalyzer } from './../analyzer';
 
 export interface Analyzer {
   runAnalysis(matches: MatchRow[]): string;
@@ -9,6 +10,10 @@ export interface Printer {
 }
 
 export class Report {
+  static ofSeasonWins(printer: Printer): Report {
+    return new Report(new SeasonWinsAnalyzer(), printer);
+  }
+
   constructor(private analyzer: Analyzer, private printer: Printer) {}
 
   run(matches: MatchRow[]): void {

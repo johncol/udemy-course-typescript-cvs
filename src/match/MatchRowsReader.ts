@@ -1,5 +1,6 @@
 import { MatchRow } from './MatchRow';
 import { MatchResult } from './MatchResult';
+import { CsvReader } from '../csv/CsvReader';
 
 type Row = string[];
 
@@ -8,6 +9,11 @@ interface RowsReader {
 }
 
 export class MatchRowsReader {
+  static fromCsv(path: string): MatchRowsReader {
+    const reader: CsvReader = new CsvReader(path);
+    return new MatchRowsReader(reader);
+  }
+
   constructor(private reader: RowsReader) {}
 
   read(): MatchRow[] {
